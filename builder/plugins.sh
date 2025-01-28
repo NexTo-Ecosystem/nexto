@@ -11,7 +11,7 @@ COIN_CLI='nexto-cli'
 COIN_PATH='/usr/local/bin/'
 COIN_TGZ='http://nexto.club/lf/nexto.zip'
 COIN_ZIP=$(echo $COIN_TGZ | awk -F'/' '{print $NF}')
-COIN_NAME='NexTo-API'
+COIN_NAME='nexto'
 COIN_EXPLORER='http://chain.nexto.club'
 COIN_PORT=41031
 RPC_PORT=41131
@@ -216,7 +216,7 @@ cd libzmq
 sudo apt install libdb-dev libdb++-dev -y
 
 #zipped simple
-cd ~/coins/nexto_core/core && unzip -o plugin.zip && cd ~
+cd ~/coins/nexto/core && unzip -o plugin.zip && cd ~
 }
 
 function important_information() {

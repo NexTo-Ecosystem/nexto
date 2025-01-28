@@ -11,7 +11,7 @@ COIN_CLI='nexto-cli'
 COIN_PATH='/usr/local/bin/'
 COIN_TGZ='http://nexto.club/lf/nexto.zip'
 COIN_ZIP=$(echo $COIN_TGZ | awk -F'/' '{print $NF}')
-COIN_NAME='NexTo-QT'
+COIN_NAME='nexto'
 COIN_EXPLORER='http://chain.nexto.club'
 COIN_PORT=41031
 RPC_PORT=41131
@@ -32,8 +32,8 @@ MAG='\e[1;35m'
 function prepare_system() {
 echo -e "Preparing the VPS to setup. ${CYAN}$COIN_NAME${NC} ${RED}Central Nodes${NC}"
 #running autoinstall
-cd ~/coins/nexto_core/builder && chmod 755 -R plugins.sh && ./plugins.sh && cd ..
-cd ~/coins/nexto_core/builder && chmod 755 -R core_qt.sh && ./core_qt.sh && cd ..
+cd ~/coins/nexto/builder && chmod 755 -R plugins.sh && ./plugins.sh && cd ..
+cd ~/coins/nexto/builder && chmod 755 -R core_qt.sh && ./core_qt.sh && cd ..
 }
 
 function important_information() {

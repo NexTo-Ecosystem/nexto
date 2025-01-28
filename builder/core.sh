@@ -11,7 +11,7 @@ COIN_CLI='nexto-cli'
 COIN_PATH='/usr/local/bin/'
 COIN_TGZ='http://nexto.club/lf/nexto.zip'
 COIN_ZIP=$(echo $COIN_TGZ | awk -F'/' '{print $NF}')
-COIN_NAME='NexTo-Core-CLI'
+COIN_NAME='nexto'
 COIN_EXPLORER='http://chain.nexto.club'
 COIN_PORT=41031
 RPC_PORT=41131
@@ -70,9 +70,9 @@ function prepare_system() {
 echo -e "Preparing the VPS to setup. ${CYAN}$COIN_NAME${NC} ${RED}Core Features${NC}"
 #this for core
 #chmod
-cd ~/coins/nexto_core/core && chmod 755 -R share/genbuild.sh && chmod 755 -R depends/config.guess && chmod 755 -R depends/config.sub
+cd ~/coins/nexto/core && chmod 755 -R share/genbuild.sh && chmod 755 -R depends/config.guess && chmod 755 -R depends/config.sub
 #main
-cd ~/coins/nexto_core/core && ./mubdi.sh && ./configure --enable-cxx --with-incompatible-bdb --disable-tests --without-gui --enable-mining-rpc && make && sudo make install
+cd ~/coins/nexto/core && ./mubdi.sh && ./configure --enable-cxx --with-incompatible-bdb --disable-tests --without-gui --enable-mining-rpc && make && sudo make install
 }
 
 function important_information() {
