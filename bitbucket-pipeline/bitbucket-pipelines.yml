@@ -1,0 +1,54 @@
+# Template C++ Application
+
+# This template allows you to validate your C++ application.
+# The workflow allows running tests and code linting on the default branch.
+
+image: atlassian/default-image:2
+pipelines:
+  default:
+    - parallel:
+        - step:
+            name: Test
+            script:
+              - apt install -y software-properties-common git unzip curl build-essential python3
+              - cd core && unzip plugin.zip && chmod 755 -R build-aux && chmod 755 -R depends && chmod 755 -R share && chmod 755 -R mubdi.sh && chmod 755 -R src/leveldb && chmod 755 -R src/univalue
+              - git clone https://github.com/libevent/libevent
+              - cd libevent
+              - ./autogen.sh && ./configure && make && sudo make install && cd ..
+              - git clone https://github.com/zeromq/libzmq
+              - cd libzmq
+              - ./autogen.sh && ./configure && make && sudo make install && cd ..
+              - apt install libdb-dev libdb++-dev -y
+              - ./mubdi.sh && ./configure --enable-cxx --disable-shared --with-incompatible-bdb 
+              - make check
+        - step:
+            name: Lint
+            script:
+              # apt update && apt -y install cppcheck && cppcheck .
+              - apt install -y software-properties-common git unzip curl build-essential python3
+              - cd core && unzip plugin.zip && chmod 755 -R build-aux && chmod 755 -R depends && chmod 755 -R share && chmod 755 -R mubdi.sh && chmod 755 -R src/leveldb && chmod 755 -R src/univalue
+              - git clone https://github.com/libevent/libevent
+              - cd libevent
+              - ./autogen.sh && ./configure && make && sudo make install && cd ..
+              - git clone https://github.com/zeromq/libzmq
+              - cd libzmq
+              - ./autogen.sh && ./configure && make && sudo make install && cd ..
+              - apt install libdb-dev libdb++-dev -y
+              - ./mubdi.sh && ./configure --enable-cxx --disable-shared --with-incompatible-bdb 
+              - make lint
+        - step:
+            name: Build and Run
+            script:
+              - apt install -y software-properties-common git unzip curl build-essential python3
+              - cd core && unzip plugin.zip && chmod 755 -R build-aux && chmod 755 -R depends && chmod 755 -R share && chmod 755 -R mubdi.sh && chmod 755 -R src/leveldb && chmod 755 -R src/univalue
+              - git clone https://github.com/libevent/libevent
+              - cd libevent
+              - ./autogen.sh && ./configure && make && sudo make install && cd ..
+              - git clone https://github.com/zeromq/libzmq
+              - cd libzmq
+              - ./autogen.sh && ./configure && make && sudo make install && cd ..
+              - apt install libdb-dev libdb++-dev -y
+              - ./mubdi.sh && ./configure --enable-cxx --disable-shared --with-incompatible-bdb 
+              - make compile
+              # Execute your C++ application after compilation to check success
+              - make distcheck
