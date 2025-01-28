@@ -161,7 +161,7 @@ public:
         consensus.vUpgrades[Consensus::UPGRADE_TESTDUMMY].nActivationHeight =
                 Consensus::NetworkUpgrade::NO_ACTIVATION_HEIGHT;
         consensus.vUpgrades[Consensus::UPGRADE_HYBRID].nActivationHeight        = 100;
-        consensus.vUpgrades[Consensus::UPGRADE_POS].nActivationHeight           = 10000;
+        consensus.vUpgrades[Consensus::UPGRADE_POS].nActivationHeight           = 100000;
         consensus.vUpgrades[Consensus::UPGRADE_POS_V2].nActivationHeight        = 500000;
         consensus.vUpgrades[Consensus::UPGRADE_BIP65].nActivationHeight         = 1500000;
         consensus.vUpgrades[Consensus::UPGRADE_V2].nActivationHeight            = 2000000;

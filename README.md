@@ -23,6 +23,14 @@ NickMod : NTC-00
 
 SmartChain : NSC(Coming Soon)
 
+POW : 100.000 Block
+
+POS : >100.000 Block
+
+DPOS : 500.000 Block
+
+Hashing : CPU or Smaller(GPU not tested)
+
 ## Requirement Installation
 
 - Ubuntu/Debian OS latest version(12)
