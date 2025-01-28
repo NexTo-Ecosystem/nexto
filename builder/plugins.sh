@@ -195,7 +195,7 @@ if [ "$?" -gt "0" ];
     echo "apt update"
     echo "apt -y install software-properties-common net-tools build-essential"
     echo "apt update"
-    echo "apt install -y git ufw curl &&
+    echo "apt install -y git ufw curl unzip &&
   apt install -y libtool autotools-dev autoconf pkg-config automake python3 libssl-dev libgmp-dev libboost-all-dev &&
   apt install -y libminiupnpc-dev libzmq3-dev qtbase5-dev qttools5-dev qttools5-dev-tools libqt5charts5-dev libqt5svg5-dev libprotobuf-dev protobuf-compiler libqrencode-dev &&
         apt install -y cargo libsodium-dev"
