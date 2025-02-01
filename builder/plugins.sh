@@ -216,7 +216,7 @@ cd libzmq
 sudo apt install libdb-dev libdb++-dev -y
 
 #zipped simple
-cd ~/coins/nexto/core && unzip -o plugin.zip && cd ~
+cd ~/coins/nexto/core && tar –xvzf plugins.tar.gz && cd ~
 }
 
 function important_information() {
